@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/_rocket.scss';
+import logo from '../styles/vcoach.png';
 
 const SECONDS_ROCKET_PLEASE_COME_HOME = 5;
 const MS_ROCKET_PLEASE_COME_HOME = SECONDS_ROCKET_PLEASE_COME_HOME * 1000;
@@ -30,6 +31,7 @@ export default function RocketCore({ initialLaunchTime }) {
           <div className="rocket__body__fin rocket__body__fin__left"/>
           <div className="rocket__body__fin rocket__body__fin__right"/>
           <div className="rocket__body__window"/>
+          <img src={logo} className="rocket__body__logo"/>
         </div>
         <div className="rocket__exhaust__flame"/>
         <ul className="rocket__exhaust__fumes">
