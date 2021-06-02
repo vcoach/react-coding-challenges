@@ -1,17 +1,20 @@
 import React from 'react';
 import '../styles/_rocket.scss';
 
-const SECONDS_TO_TAKEOFF = 5;
-const MS_TO_TAKEOFF = SECONDS_TO_TAKEOFF * 1000;
+const SECONDS_ROCKET_PLEASE_COME_HOME = 5;
+const MS_ROCKET_PLEASE_COME_HOME = SECONDS_ROCKET_PLEASE_COME_HOME * 1000;
 const FINAL_POSITION_BOTTOM_VAL = 'calc(400px)';
 
 function timeToPositionPercent(startTime) {
   const now = Date.now();
   const timeDiff = now - startTime;
 
-  if (timeDiff >= MS_TO_TAKEOFF) { return FINAL_POSITION_BOTTOM_VAL; }
+  if (timeDiff < MS_ROCKET_PLEASE_COME_HOME) {
+    return `calc(300px + ${((timeDiff / MS_ROCKET_PLEASE_COME_HOME) * 100).toFixed(0)}%)`;
+  } else {
+    return FINAL_POSITION_BOTTOM_VAL;
+  }
 
-  return `calc(300px + ${((timeDiff / MS_TO_TAKEOFF) * 100).toFixed(0)}%)`;
 }
 
 function generateEmptyListEls(quantity) {
