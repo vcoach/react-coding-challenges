@@ -15,6 +15,7 @@ None
   - Utilise the *existing* dark-mode scss file.
   - e.g. by adding a `dark-mode` class to the root `html` element
 - When in Dark mode:
+  - The page should be dark using the existing dark-mode scss file
   - The button icon should be `faSun`
   - The button icon colour should be `(#FFA500)`. You can use the `color` prop on the `Icon` component.
 
